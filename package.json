@@ -1,6 +1,6 @@
 {
   "name": "single-spa-inspector",
-  "version": "0.6.0",
+  "version": "0.0.1",
   "description": "A devtools extension for single-spa applications",
   "scripts": {
     "prebuild": "npm run webpack-build && npm run lint",
@@ -27,7 +27,7 @@
     "extension",
     "devtools"
   ],
-  "author": "Anthony Frehner",
+  "author": "Cesar Guerrero",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.15.5",

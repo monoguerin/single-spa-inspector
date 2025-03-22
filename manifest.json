@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
   "name": "single-spa Inspector",
-  "short_name": "sspa Inspect",
-  "version": "0.6.0",
-  "author": "Anthony Frehner",
-  "homepage_url": "https://github.com/single-spa/single-spa-inspector",
+  "short_name": "singlespa inspect",
+  "version": "0.0.1",
+  "author": "Cesar Guerrero",
+  "homepage_url": "https://github.com/monoguerin/single-spa-inspector",
   "description": "A devtools panel for single-spa applications",
   "action": {
     "default_icon": "./logo-white-bgblue.png",
@@ -33,7 +33,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "single.spa.inspector.dev@gmail.com"
+      "id": "info@guerrerocesar.com"
     }
   },
   "web_accessible_resources": [
