@@ -1,5 +1,5 @@
 // config file for web-ext
-module.exports = {
+export default {
   ignoreFiles: [
     "src/**",
     "node_modules/**",
@@ -8,6 +8,6 @@ module.exports = {
     "package-lock.json",
     "README.md",
     "webpack.config.js",
-    ".nvmrc"
-  ]
+    ".nvmrc",
+  ],
 };

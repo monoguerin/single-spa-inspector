@@ -5,13 +5,21 @@ export async function evalDevtoolsCmd(devToolsCommandString) {
   return evalCmd(commandString);
 }
 
-export async function evalCmd(commandString) {
-  // we don't try/catch here because we want the implementer to handle it... I think?
-  const result = await browser.devtools.inspectedWindow.eval(commandString);
-  if (result[1] && (result[1].isError || result[1].isException)) {
-    throw new Error(
-      `evalCmd '${commandString}' failed: ${JSON.stringify(result[1])}`
-    );
-  }
-  return result[0];
+export function evalCmd(commandString) {
+  return new Promise((resolve, reject) => {
+    const handleEval = (result, err) => {
+      if (err && (err.isError || err.isException)) {
+        reject(
+          new Error(
+            `evalCmd '${commandString}' failed: ${JSON.stringify(err)}`,
+          ),
+        );
+      }
+      resolve(result)
+    };
+    browser.devtools.inspectedWindow
+      .eval(commandString, handleEval)
+      ?.then((result) => handleEval(result[0], result[1]))
+      .catch(reject);
+  });
 }
